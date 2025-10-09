@@ -1,14 +1,17 @@
----
-#Jennie's First Lab
-##Setting up the file
----
+
+# Jennie's First Lab
+
+## Experiments with training logs
+
+![A lake and a city sidewalk](https://s3.amazonaws.com/files.commons.gc.cuny.edu/wp-content/blogs.dir/32566/files/2024/03/runviewdiptych-2048x963.png)
 
 <!DOCTYPE html>
 <head>
 <title>Jennie's Lab 0</title>
+
 </head>
 <body>
-<h1>Jennie's First Lab</h1>
+<h2>2027 NYC Marathon Preparation</h2>
 <p>My goal this year was to build my running mileage back up to about 20 miles per week.</p>
 <h2>Monthly Mileage 2025</h2>
 <table>
@@ -53,30 +56,35 @@
     <td>52.4</td>
   </tr>
 </table>
-<img src="sneaker.jpg" alt="Running Sneakers" style="width:250px">
-<h2>Training Notes</h2>
+
+
+<h4>Training Notes</h4>
+
+* Took 10 days off in September to let niggles simmer down
+* Ran races in May, August and September: 5K, 5K, [1 mile](https://results.nyrr.org/event/25FAM/finishers#search=Jennie%2520Coughlin&page=1)
+* Cut 4 minutes off my 5K time from May to August
+
+
+<H4>How Many Miles Will I Run in October?</h4>
 <ul>
-      <li>Took 10 days off in September to let niggles simmer down</li>
-      <li>Ran races in May, August and September: 5K, 5K, 1 mile</li>
-      <li>Cut 4 minutes off my 5K time from May to August</li>
+      <li>Two races in October, a 5K and 10K.</li>
+      <li>On race day, I run about 1.5 miles for a warm up and about 1 mile for a cool-down.</li>
+      <li>Goal is 4-5 mils, 4-5 days a week.</li>
+      <li>5K is 3.1 miles.</li>
+      <li>I ran 10.2 miles in the first couple of days of the month. Four full weeks remain after that.</li>
+      <li>But I also had to take four days off at the start of the month because of a nasty cold.</li> 
     </ul>
 
-<H2>Predict my October mileage</h2>
-<ul>
-      <li>Two races in October, a 5K and 10K</li>
-      <li>Goal is running 4-5 miles, 4-5 days a week</li>
-      <li>One week might only have three days of running</li>
-    </ul>
-<form id="frm1" action="/action_page.php">
-  First name: <input type="text" name="fname"><br>
-  Prediction: <input type="text" name="miles"><br><br>
-  <input type="button" onclick="myFunction()" value="Submit">
-</form>
+```js
+const subjectInput = html`<input type="text" placeholder="unknown">`;
+const subject = Generators.input(subjectInput);
+```
 
-<script>
-function myFunction() {
-  document.getElementById("frm1").submit();
-}
-</script>
+<div class="card" style="display: grid; gap: 0.5rem;">
+  <div>Enter your estimate: ${subjectInput}</div>
+  <div>Jennie will run <b>${subject || "unknown"}</b> miles in October</div>
+</div>
+
+
 </body>
 
