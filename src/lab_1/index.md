@@ -1,13 +1,13 @@
 ---
-title: "Lab 1: Passing Pollinators"
+title: "Lab 1: Prolific Pollinators"
 toc: true
 ---
-
+# Lab 1: Prolific Pollinators
 
 ```js
 const pollinators = FileAttachment("./data/pollinator_activity_data.csv").csv({ typed: true })
 ```
-
+## This is our pollinator data
 ```js
 Inputs.table(pollinators)
 ```
@@ -16,12 +16,15 @@ Inputs.table(pollinators)
 
 ```js
 Plot.plot({
+  title: "Average body mass of pollinator species",
+  subtitle: "See how distribution within the species compares to distribution between species",
+
   marginLeft: 80,
   x: {label: "Frequency"},
   y: {label: null},
   color: {legend: true},
   marks: [
-    Plot.barX(pollinators, {y: "pollinator_species", x: 1, inset: 0.5, fill: "avg_body_mass_g", sort: "avg_body_mass_g"}),
+    Plot.barX(pollinators, {y: "pollinator_species", x: 1, inset: 0.5, fill: "avg_body_mass_g", sort: "avg_body_mass_g", tip: true}),
     Plot.ruleX([0])
   ]
 })
@@ -30,12 +33,15 @@ Honeybees have the smallest average body mass, and there is no overlap with the 
 
 ```js
 Plot.plot({
+  title: "Average wing span of pollinator species",
+  subtitle: "See how distribution within the species compares to distribution between species",
+
   marginLeft: 80,
   x: {label: "Frequency"},
   y: {label: null},
   color: {legend: true},
   marks: [
-    Plot.barX(pollinators, {y: "pollinator_species", x: 1, inset: 0.5, fill: "avg_wing_span_mm", sort: "avg_wing_span_mm"}),
+    Plot.barX(pollinators, {y: "pollinator_species", x: 1, inset: 0.5, fill: "avg_wing_span_mm", sort: "avg_wing_span_mm", tip: true}),
     Plot.ruleX([0])
   ]
 })
@@ -50,6 +56,9 @@ We'll start out looking at temperature. To control for differences in the locati
 ```js
 
 Plot.plot({
+  title: "Temperature's impact on visits",
+  subtitle: "A look at how the temperature correlates with the number of pollinator visits each day, organized by location",
+  
   height: 800,
   marginRight: 90,
   marginLeft: 110,
@@ -64,6 +73,7 @@ Plot.plot({
       y: "visit_count",
       fy: "location",
       stroke: "pollinator_group",
+      tip: true,
       sort: {y: "-x", fy: "-x", reduce: "median"}
     })
   ]
@@ -75,6 +85,9 @@ The sites with the most visits all come in warmer weather. However, even on thos
 ```js
 
 Plot.plot({
+  title: "Humidity's impact on visits",
+  subtitle: "A look at how the humidity correlates with the number of pollinator visits each day, organized by location",
+  
   height: 800,
   marginRight: 90,
   marginLeft: 110,
@@ -89,6 +102,7 @@ Plot.plot({
       y: "visit_count",
       fy: "location",
       stroke: "pollinator_group",
+      tip: true,
       sort: {y: "-x", fy: "-x", reduce: "median"}
     })
   ]
@@ -100,6 +114,9 @@ Here, we don't see a strong trend based on humidity. However, this view highligh
 
 ```js
 Plot.plot({
+  title: "Wind's impact on visits",
+  subtitle: "A look at how the wind speed correlates with the number of pollinator visits each day, organized by location",
+  
   height: 800,
   marginRight: 90,
   marginLeft: 110,
@@ -114,6 +131,7 @@ Plot.plot({
       y: "visit_count",
       fy: "location",
       stroke: "pollinator_group",
+      tip: true,
       sort: {y: "-x", fy: "-x", reduce: "median"}
     })
   ]
@@ -124,6 +142,9 @@ Here we have part of the answer: Visits are much higher with slower wind speeds,
 
 ```js
 Plot.plot({
+  title: "The impact of weather conditions on visits",
+  subtitle: "A look at how the weather conditions correlate with the number of pollinator visits each day, organized by location",
+  
   height: 800,
   marginRight: 90,
   marginLeft: 110,
@@ -138,6 +159,7 @@ Plot.plot({
       y: "visit_count",
       fy: "location",
       stroke: "pollinator_group",
+      tip: true,
       sort: {y: "-x", reduce: "median"}
     })
   ]
@@ -151,12 +173,15 @@ Sunflowers have the highest nectar production, with the bottom tail of their dis
 
 ```js
 Plot.plot({
+  title: "Nectar production",
+  subtitle: "A look at how the flower species compare on nectar production",
+
   y: {
     grid: true,
     inset: 6
   },
   marks: [
-    Plot.boxY(pollinators, {x: "flower_species", y: "nectar_production"})
+    Plot.boxY(pollinators, {x: "flower_species", y: "nectar_production", tip: true})
   ]
 })
 ```
