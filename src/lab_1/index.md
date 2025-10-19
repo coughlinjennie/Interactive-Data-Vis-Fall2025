@@ -40,7 +40,7 @@ Plot.plot({
   ]
 })
 ```
-
+Wing spans show a little more overlap. The honeybees with the largest wing span will overlap with a few of the bumblebees with the shortest wing spans for their cohort. And about half the bumblebees have wing spans large enough to compare to the smallest third of the carpenter bees. 
 
 
 ## Question 2: What is the ideal weather (conditions, temperature, etc) for pollinating?
