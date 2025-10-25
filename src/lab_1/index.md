@@ -2,14 +2,17 @@
 title: "Lab 1: Prolific Pollinators"
 toc: true
 ---
+
+
+
+
+
 # Lab 1: Prolific Pollinators
+
+
 
 ```js
 const pollinators = FileAttachment("./data/pollinator_activity_data.csv").csv({ typed: true })
-```
-## This is our pollinator data
-```js
-Inputs.table(pollinators)
 ```
 
 ## Question 1: What is the body mass and wing span distribution of each pollinator species observed? 
@@ -100,4 +103,8 @@ Plot.plot({
     Plot.boxY(pollinators, {x: "flower_species", y: "nectar_production", fill: "flower_species", tip: true})
   ]
 })
+```
+## This is our pollinator data
+```js
+Inputs.table(pollinators)
 ```

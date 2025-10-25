@@ -1,0 +1,14 @@
+{
+  "name": "@observablehq/custom-plot-themes",
+  "main": "864f9c111c2bc586@926.js",
+  "version": "926.0.0",
+  "homepage": "https://observablehq.com/@observablehq/custom-plot-themes",
+  "author": {
+    "name": "Observable",
+    "url": "https://observablehq.com/@observablehq"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
