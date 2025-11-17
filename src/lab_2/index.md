@@ -16,7 +16,6 @@ const ridership = FileAttachment("./data/ridership.csv").csv({ typed: true })
 ```
 
 
-
 ```js
 const currentStaffing = {
   "Times Sq-42 St": 19,
@@ -154,9 +153,6 @@ ${Plot.plot({
 })}
 
 </div>
-
-
-
 
 
 
