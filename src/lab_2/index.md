@@ -182,7 +182,7 @@ ${Plot.plot({
 # Summer 2026 Staffing
 
 <div class="card">
-When we look ahead to 2026, we have to weigh the impact of a single event on a station vs. the number of nearby events across the season. Because the New York City Transit Authority is looking for staffing recommendations for the season, this recommendation prioritizes stations with more events, and in cases where it it close, the combined attendance of those events.  
+When we look ahead to 2026, we have to weigh the impact of a single event on a station vs. the number of nearby events across the season. Because the New York City Transit Authority is looking for staffing recommendations for the season, this recommendation prioritizes stations with more events, and in cases where it is close, the combined attendance of those events.  
 ${Plot.plot({
   marginLeft: 120,
   x: {
