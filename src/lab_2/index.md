@@ -86,7 +86,9 @@ const selectedStation = view(Inputs.select(allStations))
 ```
 
 <div class="card">
-Beyond the notable outliers visible above, stations also vary in how their typical trip volume is distributed through the week. Canal Street has less traffic than most stations, and if you select it, you can see it also has lot of variation by day of the week. Now look at Grand Central-42 St, which has many more people getting on and off there each day and also has less variation in that number day to day. It does have that one big spike in the first half of July, though.   
+Beyond the notable outliers visible above, stations also vary in how their typical trip volume is distributed through the week. Canal Street has less traffic than most stations, and if you select it, you can see it also has lot of variation by day of the week. You also can see a general decline after the fare increase in July. 
+
+Now look at Grand Central-42 St, which has many more people getting on and off there each day and also has less variation in that number day to day. It also seems to have fewer riders after the fare increase. But what's more interesting is that one big spike in the first half of July.   
 ${Plot.plot({
   height: 400,
   width,
@@ -198,7 +200,7 @@ ${Plot.plot({
   ]
 })}
 
-Canal Street, 34 St-Penn Station and Chambers St have both the most events and the highest expected attendence for those events, so they would be the priority. Because we earlier noted that Canal Street has much less traffic in general than most stations, it also would be the single biggest priority for more staffing on those dates. 
+Canal Street, 34 St-Penn Station and Chambers St have both the most events and the highest expected attendence for those events, so they would be the priority. Because we earlier noted that Canal Street has much less traffic in general than most stations and among the worst response times, it also would be the single biggest priority for more staffing on those dates. 
 
 </div>
 
