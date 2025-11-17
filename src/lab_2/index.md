@@ -189,6 +189,10 @@ ${Plot.plot({
     axis: "top",
     grid: true,
   },
+  color: {
+    scheme: "set2",
+    legend: true
+  },
   marks: [
     Plot.ruleX([0]),
     Plot.barX(upcoming_events, {
