@@ -191,7 +191,6 @@ ${Plot.plot({
   },
   color: {
     scheme: "set2",
-    legend: true
   },
   marks: [
     Plot.ruleX([0]),
