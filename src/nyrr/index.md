@@ -8,58 +8,68 @@ const runners = FileAttachment("./data/nyrr.csv").csv({ typed: true })
 ```
 
 ```js
+const couchK = new Date("2025-01-15T00:00:00Z");
+```
 
+```js
 Plot.plot({
-  overlap: 8,
-  height: 700,
-  width,
-  marginLeft: 120,
-  axis: null,
-  x: {
-    axis: "top",
-    round: true
-  },
-  y: {
-    domain: [0, d3.max(runners, d => d.value)]
-  },
-  color: {
-    legend: true,
-    label: "Number of runners",
-    scheme: "purd"
-  },
-  fy: {
-    domain: runners.map(d => d.name) // preserve input order
-  },
+  height: 600,
+  width: 1000,
+  x: {reverse: true},
+  marks: [
+    Plot.ruleX(["00:30:00"]),
+    Plot.dotX(runners, Plot.dodgeY({x: "Time", fill: "Gender", symbol: "square", r: 1.5, tip: true}))
+  ]
+})
+
+```
+
+```js
+Plot.plot({
+  height: 1600,
+  width: 900,
+  marginLeft: 90,
+  x: {reverse: true},
   facet: {
     data: runners,
-    y: "AgeGroup"
+    y: "GenAge"
   },
   marks: [
-    Plot.areaY(runners, {x: "Time", y: "Race", z: "AgeGroup", fill: "value", sort: "date"}),
-    Plot.lineY(runners, {x: "Time", y: "Race", z: "AgeGroup", strokeWidth: 1, sort: "date"}),
-    Plot.text(runners, Plot.selectFirst({x: d3.min(runners, d => d.Time), text: "AgeGroup", dx: -3, frameAnchor: "right"}))
+    Plot.dotX(runners, Plot.dodgeY({x: "Time", fill: "Gender", symbol: "square", r: 1}))
   ]
 })
 
 ```
 
 
+y: { domain: ["WU20", "MU20", "W20-24", "M20-24", "W25-29", "M25-29", "W30-34", "M30-34", "W35-39", "M35-39", "W40-44", "M40-44", "W45-49", "M45-49", "W50-54", "M50-54", "W55-59", "M55-59", "W60-64", "M60-64", "W65-69", "M65-69", "W70-74", "M70-74", "W75-79", "M75-79", "W80+", "M80+"]},
+
+  
+xAxis.tickValues(x.domain().filter((e,i)=>i%60==0));
 
 ```js
-
 Plot.plot({
-  height: 100 + new Set(traffic.map(d => d.name)).size * 100,
-  width,
-  marginBottom: 5,
-  marginLeft: 120,
-  x: {axis: "both"},
-  y: {axis: null, range: [6 * 10 - 2, (2.5 - overlap) * 17 - 2]},
-  fy: {label: null, domain: traffic.map(d => d.name)}, // preserve input order
+  height: 600,
+  width:
+  },
+  marks:[
+  Plot.waffleY(runners, Plot.groupX(
+    y: "count", 
+    x: "Time",
+    unit: 100
+    ))
+  ]
+)  
+```
+
+
+```js
+Plot.plot({
+  y: {grid: true},
+  color: {legend: true},
   marks: [
-    d3.groups(traffic, d => d.name).map(([, values]) => [
-      Plot.areaY(values, {x: "date", y: "value", fy: "name", curve: "basis", sort: "date", fill: "#495867"}),
-      Plot.lineY(values, {x: "date", y: "value", fy: "name", curve: "basis", sort: "date", strokeWidth: 1})
-    ])
+    Plot.rectY(runners, Plot.binX({y: "count"}, {x: "Time", fill: "Gender"})),
+    Plot.ruleY([0])
   ]
 })
 
