@@ -92,7 +92,7 @@ const eventsMap = new Map(events.map(d => [d.boro_cd, d.income_category]))
 
 <div class="card" style="background-color: #E6E8E8; padding: 15px; width: 100%; box-sizing: border-box; display: block;">
   <h1 style="display: block; width: 100%; max-width: 100%; box-sizing: border-box; text-align: left; margin-bottom: 10px;">
-    Candidate votes vs. all votes cast vs. all registered voters
+    How our GOTV efforts map to the election results
   </h1> 
 
 ${Plot.plot({
