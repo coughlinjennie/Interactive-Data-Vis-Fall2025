@@ -1,6 +1,6 @@
 ---
 title: "New York Road Runners 5K Participants"
-toc: true
+toc: false
 ---
 
 ```js
@@ -20,6 +20,11 @@ Plot.plot({
     label: "Finish Time (Minutes)",
     transform: (t) => (t /60) // convert seconds to minutes
     },
+  color: {
+    range: ["#d50080" , "#0064ff" , "#6a0dad"],
+    domain: ["W" , "M" , "X"], 
+    legend: true
+  },  
   marks: [
     Plot.tip(
       [`Road Runners Club of America coaching certification training states that 13:45 is the slowest pace people can run.`],
@@ -30,10 +35,10 @@ Plot.plot({
     Plot.tip(
       [`NYRR's standard course time limit for 5K races is 82 minutes, or 20 minutes/mile plus 20 minutes.`],
       {x: 4870, y: 80, dy: -3, anchor: "left", fill: "gray", fillOpacity: 0.2}),
-    Plot.ruleX([1800], {stroke: "purple"}),
-    Plot.ruleX([2563], {stroke: "purple"}),
-    Plot.ruleX([3600], {stroke: "purple"}),
-    Plot.ruleX([4920], {stroke: "purple"}),
+    Plot.ruleX([1800], {stroke: "#656566", strokeWidth: 3}),
+    Plot.ruleX([2563], {stroke: "#656566", strokeWidth: 3}),
+    Plot.ruleX([3600], {stroke: "#656566", strokeWidth: 3}),
+    Plot.ruleX([4920], {stroke: "#656566", strokeWidth: 3}),
     Plot.dotX(runners, Plot.dodgeY({x: "Time", fill: "Gender", symbol: "square", r: 1, tip: true})),
     Plot.tip(
       [`The beginner running program Couch25K trains runners to run for 30 minutes.`],
@@ -55,18 +60,25 @@ Plot.plot({
     label: "Finish Time (Minutes)",
     transform: (t) => (t /60) // convert seconds to minutes
     },
+  color: {
+    range: ["#d50080" , "#0064ff" , "#6a0dad"],
+    domain: ["W" , "M" , "X"], 
+    legend: true
+  },    
   facet: {
     data: runners,
     y: "AgeGen"
   },
   marks: [
-    Plot.ruleX([1800], {stroke: "purple"}),
-    Plot.ruleX([2563], {stroke: "purple"}),
-    Plot.ruleX([3600], {stroke: "purple"}),
-    Plot.ruleX([4920], {stroke: "purple"}),
+    Plot.ruleX([1800], {stroke: "#656566"}),
+    Plot.ruleX([2563], {stroke: "#656566"}),
+    Plot.ruleX([3600], {stroke: "#656566"}),
+    Plot.ruleX([4920], {stroke: "#656566"}),
     Plot.dotX(runners, Plot.dodgeY({x: "Time", fill: "Gender", symbol: "square", r: 1}),
     )
   ]
 })
 
 ```
+
+
