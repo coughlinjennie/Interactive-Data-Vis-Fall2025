@@ -17,11 +17,9 @@ const nyc = await FileAttachment("data/nyc.json").json();
 const results = await FileAttachment("data/election_results.csv").csv({ typed: true });
 const survey = await FileAttachment("data/survey_responses.csv").csv({ typed: true });
 const events = await FileAttachment("data/campaign_events.csv").csv({ typed: true });
-
 ```
 
 ```js
-
 const allVotes = results.map(d => ({  ...d, votes_cast: d.votes_candidate + d.votes_opponent }))
 const bin = d3.bin().thresholds([200, 300, 400, 500]);
 ```
@@ -90,7 +88,6 @@ const resultsMap = new Map(allVotes.map(d => [d.boro_cd, d.gotv_doors_knocked]))
 
 ```js
 const eventsMap = new Map(events.map(d => [d.boro_cd, d.income_category]))
-
 ```
 
 <div class="card" style="background-color: #E6E8E8; padding: 15px; width: 100%; box-sizing: border-box; display: block;">
