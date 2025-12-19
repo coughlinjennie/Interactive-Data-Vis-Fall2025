@@ -20,6 +20,8 @@ const groups = FileAttachment("./data/AgeGroups.csv").csv({ typed: true })
     Results by Gender
   </h1> 
 
+One thing to note here is that the number of runners registered as non-binary is fairly small, so it's harder to draw broad conclusions compared to the people registered in the men's and women's categories. There are also a small number of anonymous finishers, where the NYRR withholds age, gender and other details from the results to prevent people from being able to track those runners, like when Chelsea Clinton ran the marathon a few years ago. Those show up as nulls. 
+
 ```js
 Plot.plot({
   marginLeft: 100,
@@ -110,7 +112,7 @@ Plot.plot({
     Cutoff Standards by Gender
   </h1> 
 
-Next, we look at how many people in each gender category would finish the 5K in the time allotted for each standard. One thing to note here is that the number of runners registered as non-binary is fairly small, so it's harder to draw broad conclusions compared to the people registered in the men's and women's categories. There are also a small number of anonymous finishers, where the NYRR withholds age, gender and other details from the results to prevent people from being able to track those runners, like when Chelsea Clinton ran the marathon a few years ago. Those show up as nulls. 
+Next, we look at how many people in each gender category would finish the 5K in the time allotted for each standard. 
 
 For the 30 minutes allowed in the Couch25K program, there's a huge gap between the number of men who finished a 5K in that time vs. the number of women. Less than half the runners registered as women finished in less than 30 minutes. 
 ```js
